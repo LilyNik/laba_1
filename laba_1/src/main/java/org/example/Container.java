@@ -1,14 +1,34 @@
 package org.example;
 
+/**
+ * Класс контейнер со свойствами <b>size</b> и <b>array</b>.
+ * * @autor Никульникова Лилия
+ */
 public class Container {
-
+    /**
+     * Поле количество элементов
+     */
     private int size = 0;
+    /**
+     * Поле массив строк
+     */
     private String[] array = new String[5];
-    
+
+    /**
+     * Функция получения значения поля {@link Container#size}
+     *
+     * @return возвращает количество элементов в массиве
+     */
     public int getSize() {
         return size;
     }
 
+    /**
+     * Функция получения значения элемента поля {@link Container#array}
+     *
+     * @param index - индекс массива
+     * @return возвращает элемент массива по индексу
+     */
     public String get(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index out of bounds");
@@ -16,6 +36,11 @@ public class Container {
         return array[index];
     }
 
+    /**
+     * Функция добавления в массив  {@link Container#array}
+     *
+     * @param elements - элементы/элемент массива
+     */
     public void add(String... elements) {
         for (String element : elements) {
             if (size == array.length) {
@@ -32,6 +57,11 @@ public class Container {
         array = newArray;
     }
 
+    /**
+     * Функция удаления элемента массива по индексу {@link Container#array}
+     *
+     * @param index - индекс массива
+     */
     public void remove(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index out of bounds");
@@ -44,6 +74,11 @@ public class Container {
         size--;
     }
 
+    /**
+     * Функция удаления элемента массива  {@link Container#array}
+     *
+     * @param element - строка
+     */
     public void remove(String element) {
         for (int i = 0; i < size; i++) {
             if (array[i] != null && array[i].equals(element)) {
