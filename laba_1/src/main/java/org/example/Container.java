@@ -15,4 +15,14 @@ public class Container {
         }
         return array[index];
     }
+
+        public void add(String... elements) {
+        for (String element : elements) {
+            if (size == array.length) {
+                resizeArray();
+            }
+            array[size] = element;
+            size++;
+        }
+    }
 }
