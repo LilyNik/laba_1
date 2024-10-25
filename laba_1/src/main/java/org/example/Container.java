@@ -25,4 +25,10 @@ public class Container {
             size++;
         }
     }
+
+    private void resizeArray() {
+        String[] newArray = new String[array.length * 2];
+        System.arraycopy(array, 0, newArray, 0, array.length);
+        array = newArray;
+    }
 }
