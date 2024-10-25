@@ -1,13 +1,18 @@
 package org.example;
 
-/**
- * Hello world!
- *
- */
-public class Container
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class Container {
+
+    private int size = 0;
+    private String[] array = new String[5];
+    
+    public int getSize() {
+        return size;
+    }
+
+    public String get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        }
+        return array[index];
     }
 }
