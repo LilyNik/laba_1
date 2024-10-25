@@ -16,7 +16,7 @@ public class Container {
         return array[index];
     }
 
-        public void add(String... elements) {
+    public void add(String... elements) {
         for (String element : elements) {
             if (size == array.length) {
                 resizeArray();
