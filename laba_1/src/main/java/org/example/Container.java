@@ -31,4 +31,25 @@ public class Container {
         System.arraycopy(array, 0, newArray, 0, array.length);
         array = newArray;
     }
+
+    public void remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        }
+
+        for (int i = index; i < size - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        array[size - 1] = null;
+        size--;
+    }
+
+    public void remove(String element) {
+        for (int i = 0; i < size; i++) {
+            if (array[i] != null && array[i].equals(element)) {
+                remove(i);
+                return;
+            }
+        }
+    }
 }
